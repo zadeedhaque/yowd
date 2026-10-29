@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.pyz
+site/
+data/yowd_data.json
+data/outbox.log
+data/device/
+data/exports/

@@ -1,0 +1,67 @@
+{
+  "business": {
+    "name": "Your Order We Deliver (YOWD)",
+    "abn": "51 824 753 556",
+    "address": "Level 2, 120 Swan Street, Richmond VIC 3121",
+    "gst_rate": "0.10"
+  },
+  "operating_area": {
+    "name": "Greater Melbourne",
+    "postcode_ranges": [[3000, 3211], [3335, 3341], [3427, 3443],
+                        [3750, 3811], [3910, 3920], [3926, 3944],
+                        [3975, 3978]]
+  },
+  "pricing": {
+    "base_fee": "15.00",
+    "per_km": "1.20",
+    "size_surcharge": {"Small": "0.00", "Medium": "5.00", "Large": "12.00"},
+    "weight_free_kg": "5",
+    "per_kg_over": "0.80",
+    "minimum_price": "20.00"
+  },
+  "parcel_limits": {
+    "max_weight_kg": "30",
+    "max_side_cm": "120",
+    "max_girth_cm": "250",
+    "small_max_volume_l": "25",
+    "medium_max_volume_l": "80",
+    "categories": ["General goods", "Documents", "Fragile", "Electronics",
+                   "Food (non-perishable)"],
+    "prohibited_categories": ["Dangerous goods", "Live animals",
+                              "Firearms", "Refrigerated perishables"]
+  },
+  "time_limits": {
+    "quote_valid_hours": 24,
+    "ack_timeout_minutes": 15,
+    "pickup_window_hours": 2,
+    "delivery_window_hours": 2,
+    "lead_time_hours": 2,
+    "urgent_within_hours": 3,
+    "average_speed_kmh": 30
+  },
+  "status_transitions": {
+    "Accepted": ["Scheduled", "Cancelled"],
+    "Scheduled": ["Accepted", "Picked up", "Failed", "Cancelled"],
+    "Picked up": ["In Transit", "Failed", "Cancelled", "Redirected"],
+    "In Transit": ["Delivered", "Failed", "Redirected", "Returned"],
+    "Redirected": ["In Transit", "Delivered", "Failed"],
+    "Delivered": [],
+    "Failed": [],
+    "Cancelled": [],
+    "Returned": []
+  },
+  "templates": {
+    "Quote": "Your YOWD quote {ref} is ${amount} (valid until {expiry}).",
+    "Scheduled": "Delivery {ref} is booked for pickup {window}.",
+    "Picked up": "Delivery {ref} has been picked up by YOWD.",
+    "In Transit": "Delivery {ref} is on its way.",
+    "Delivered": "Delivery {ref} was delivered and signed for by {receiver}.",
+    "Failed": "Delivery {ref} could not be completed: {reason}.",
+    "Cancelled": "Delivery {ref} has been cancelled.",
+    "Allocation": "New job {ref}: pickup {window}. Please acknowledge.",
+    "Reallocate": "Delivery {ref} needs a new driver: {reason}.",
+    "Failed attempt": "YOWD attempted delivery {ref}: {reason}.",
+    "Review": "Request {ref} has an address problem and needs review.",
+    "Sync conflict": "Offline action on {ref} could not be applied: {reason}"
+  }
+}

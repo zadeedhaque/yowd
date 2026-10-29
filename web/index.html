@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YOWD Delivery Management</title>
+  <meta name="description" content="Delivery management for Your Order We Deliver: requests and quotes, driver allocation, pickup and delivery, tracking and statistics.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23f3c623'/%3E%3Crect x='4' y='4' width='5' height='24' fill='%2315212c'/%3E%3C/svg%3E">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <h1>YOWD Dispatch</h1>
+      <span class="sub">Your Order We Deliver</span>
+      <span class="clock" aria-live="off"></span>
+    </header>
+    <nav class="rail" aria-label="Portals">
+      <button type="button" data-portal="customer">Customer<small>Send and follow parcels</small></button>
+      <button type="button" data-portal="office">Office<small>Review, allocate, cash</small></button>
+      <button type="button" data-portal="driver">Driver<small>Jobs and availability</small></button>
+      <button type="button" data-portal="track">Track<small>For recipients</small></button>
+      <span class="spacer"></span>
+      <button type="button" class="reset">Start again with sample data</button>
+    </nav>
+    <main tabindex="-1">
+      <div class="loading">
+        <div>
+          <h2>Starting the delivery system</h2>
+          <p class="muted" id="load-status">Loading</p>
+          <div class="bar"><span></span></div>
+          <noscript><p>This page needs JavaScript to run.</p></noscript>
+        </div>
+      </div>
+    </main>
+    <aside class="outbox" aria-label="Messages sent"></aside>
+  </div>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
